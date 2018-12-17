@@ -1,7 +1,5 @@
 //https://github.com/VincentGarreau/particles.js/
 export default function() {
-    document.querySelector('h2').style.display = 'none';
-
     particlesJS("particles-js", {
         "particles": {
           "number": {

@@ -3,16 +3,25 @@ import "./main.scss";
 require('particles.js');
 import Shake from 'shake.js';
 import startSnow from './startSnow.js';
-import 'normalize.css';
+
+
+const shakeTextHeader = document.querySelector('.shake-text-wrapper h2');
+if ('ondevicemotion' in window && window.ondevicemotion !== null) {
+    shakeTextHeader.innerHTML = 'Shake your phone';
+}
 
 const myShakeEvent = new Shake({
     threshold: 20, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 myShakeEvent.start();
-window.addEventListener('shake', startSnow, false);
-if ('ondevicemotion' === null) {
-    document.querySelector('.shake-text-wrapper h2').innerHTML = 'Shake your phone';
+window.addEventListener('shake', shakeDetected, false);
+
+function shakeDetected() {
+    shakeTextHeader.innerHTML = 'Ahh just like the real thing';
+    shakeTextHeader.classList.remove('shaking');
+    startSnow();
+
 }
 
 // Make the DIV element draggable:
@@ -56,7 +65,7 @@ function dragElement(elementToDrag) {
     elementToDrag.style.left = (elementToDrag.offsetLeft - pos1) + "px";
 
     if (distance > 600 && !snowInitiated) {
-        startSnow();
+        shakeDetected();
         snowInitiated = true;
     }
   }

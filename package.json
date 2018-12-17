@@ -1,5 +1,5 @@
 {
-    "name": "game-of-life",
+    "name": "hyf-xmas",
     "version": "2.0.0",
     "description": "",
     "main": "index.js",
@@ -14,7 +14,7 @@
         "url": ""
     },
     "keywords": [],
-    "author": "Zaki Wasik",
+    "author": "Benjamin Hughes",
     "license": "ISC",
     "bugs": {
         "url": ""
