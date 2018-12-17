@@ -6,11 +6,14 @@ import startSnow from './startSnow.js';
 import 'normalize.css';
 
 const myShakeEvent = new Shake({
-    threshold: 15, // optional shake strength threshold
+    threshold: 20, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
 myShakeEvent.start();
 window.addEventListener('shake', startSnow, false);
+if ('ondevicemotion' === null) {
+    document.querySelector('.shake-text-wrapper h2').innerHTML = 'Shake your phone';
+}
 
 // Make the DIV element draggable:
 dragElement(document.querySelector(".globe-wrapper"));

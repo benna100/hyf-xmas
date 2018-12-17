@@ -59,16 +59,21 @@ module.exports = {
                     ],
                     fallback: 'style-loader'
                 }),
+            }
+            ,
+            {
+                test: /\.html$/,
+                use: ['html-loader']
             },
             {
-                // Load all images as base64 encoding if they are smaller than 8192 bytes
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(jpg|png)$/,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            name: '[name].[hash:20].[ext]',
-                            limit: 8192
+                            name: '[name].[ext]',
+                            outputPath: 'assets/',
+                            publicPath: 'assets/'
                         }
                     }
                 ]
