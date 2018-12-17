@@ -9,7 +9,7 @@ const myShakeEvent = new Shake({
     threshold: 15, // optional shake strength threshold
     timeout: 1000 // optional, determines the frequency of event generation
 });
-
+myShakeEvent.start();
 window.addEventListener('shake', startSnow, false);
 
 // Make the DIV element draggable:
