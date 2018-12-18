@@ -3,12 +3,14 @@ import "./main.scss";
 require('particles.js');
 import Shake from 'shake.js';
 import startSnow from './startSnow.js';
-
+import isMobileDevice from './isMobileDevice.js';
 
 const shakeTextHeader = document.querySelector('.shake-text-wrapper h2');
-if ('ondevicemotion' in window && window.ondevicemotion !== null) {
+
+if (isMobileDevice()) {
     shakeTextHeader.innerHTML = 'Shake your phone';
 }
+
 
 const myShakeEvent = new Shake({
     threshold: 20, // optional shake strength threshold
@@ -21,7 +23,6 @@ function shakeDetected() {
     shakeTextHeader.innerHTML = 'Ahh just like the real thing';
     shakeTextHeader.classList.remove('shaking');
     startSnow();
-
 }
 
 // Make the DIV element draggable:
