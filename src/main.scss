@@ -61,6 +61,7 @@ h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    width: 90%;
     
     h2 {
         &.shaking {
@@ -72,13 +73,13 @@ h1 {
 }
 
 h3 {
-    //margin-top: 340px;
     text-align: center;
     position: absolute;
     top: 410px;
     font-size: 1rem;
     left: 50%;
     transform: translateX(-50%);
+    width: 90%;
 }
 
 
