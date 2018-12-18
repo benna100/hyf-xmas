@@ -39,6 +39,13 @@ To preview the production build
 npm run preview
 ```
 
+## Deploying to github pages
+npm run build
+git add .
+git commit -m ""
+git push origin master
+git subtree push --prefix dist origin gh-pages
+
 ## Tests
 The most critical functions have unit tests, located in the `/src/sketch.test.js` folder. To run the test suite with JEST run the command `npm run test`.
 
